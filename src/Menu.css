@@ -1,0 +1,77 @@
+
+html,body{
+    margin: 0;
+    font-size: 20px;
+    background: #eee;
+    text-align: center;
+}
+ul,li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 100px;
+    height: 70px;
+    padding-left: 10px;
+}
+.menu{
+    display: flex;
+    background: linear-gradient(to left, #3b5998 , #1b1a57);
+    height: 70px;
+}
+.imgfile{
+    padding-top: 15px;
+    padding-bottom: 25px;
+    padding-left: 15px;
+    width: 110px;
+    height: 40px;
+}
+.menu a{
+    color: #fff;
+}
+.menu_list{
+    display:flex;
+}
+.list_item{
+    width: 200px;
+    height: 70px;
+}
+.item_a{
+    display: block;
+    padding-top: 20px;
+}
+.hidden_list{
+    transform: scaleY(0);
+    background: #3b5998;
+    margin-top: 23px;
+    z-index: 10;
+}
+.hidden_item{
+    width: 200px;
+    height: 50px;
+    position: relative;
+    border-bottom: 1px solid #fff;
+}
+.list_item:hover > .hidden_list,
+.hidden_item:hover > .sub_list{
+    transition: 0.1s;
+    transform: scaleY(1);
+}
+.sub_list{
+    transform: scaleY(0);
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    left: 200px;
+}
+.sub_item{
+    width: 200px;
+    height: 50px;
+    background: #3b5998;
+    border-bottom: 1px solid #fff;
+}
