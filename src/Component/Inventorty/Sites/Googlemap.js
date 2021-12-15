@@ -26,16 +26,7 @@ export default function Googlemap({totalLine}) {
         setActiveMarker(marker);
     };
 
-    const bigSize = (marker) =>{
-        if(marker === activeMarker){
-            return(
-                <Marker
-                    icon={{scaledSize : new window.google.maps.Size(150,150)}}
-                /> 
-            )          
-        }
-    };
-    
+        
     const ifmarker = totalLine.map(value=>{
         if(value.p_node){
             return (
@@ -44,13 +35,12 @@ export default function Googlemap({totalLine}) {
                     position={value}
                     icon={
                         {
-                            url : "nodepop.png",
+                            url : "smfipop.png",
                             scaledSize: new window.google.maps.Size(20,30)
                         }
                     }
                     onClick={()=>{
                         handleActiveMarker(value.num)
-                        bigSize(value.num)
                     }}
                 />
                 {activeMarker === value.num && (
@@ -74,7 +64,7 @@ export default function Googlemap({totalLine}) {
                     position={value}
                     icon={
                         {
-                            url : "3.png",
+                            url : "smfitrunk.png",
                             scaledSize: new window.google.maps.Size(20,30)
                         }
                     }
@@ -95,14 +85,14 @@ export default function Googlemap({totalLine}) {
                 </>
             )
         }else if(value.wn_node){
-            if(value.wn_node === 'WN-T1'){
+            if(value.battery === 100){
                 return (
                     <>
                         <Marker 
                             position={value}
                             icon={
                                 {
-                                    url : "t2.png",
+                                    url : "smfibattery100.png",
                                     scaledSize : new window.google.maps.Size(20,30)
                                 }
                             }
@@ -123,14 +113,70 @@ export default function Googlemap({totalLine}) {
                         )}
                     </>
                 )
-            }else if(value.wn_node === 'WN-T2'){
+            }else if(value.battery === 75){
                 return(
                     <>
                         <Marker 
                             position={value}
                             icon={
                                 {
-                                    url : "t4.png",
+                                    url : "smfibattery75.png",
+                                    scaledSize : new window.google.maps.Size(20,30)
+                                }
+                            }
+                            onClick={()=>{handleActiveMarker(value.num)}}
+                        />
+                        {activeMarker === value.num && (
+                            <InfoWindow 
+                                position={{lat : value.lat+0.002100 , lng : value.lng}}
+                                onCloseClick={() => setActiveMarker(null)}
+                            >
+                                <div className="infowindow">
+                                    <p className="infoitem info_title">{value.wn_node}</p>
+                                    <p className="infoitem">lat : {value.lat}</p>
+                                    <p className="infoitem">lng : {value.lng}</p>
+                                    <p className="infoitem">battery : 25% </p>
+                                </div>
+                            </InfoWindow>
+                        )}
+                    </>
+                );
+            }else if(value.battery === 50){
+                return(
+                    <>
+                        <Marker 
+                            position={value}
+                            icon={
+                                {
+                                    url : "smfibattery50.png",
+                                    scaledSize : new window.google.maps.Size(20,30)
+                                }
+                            }
+                            onClick={()=>{handleActiveMarker(value.num)}}
+                        />
+                        {activeMarker === value.num && (
+                            <InfoWindow 
+                                position={{lat : value.lat+0.002100 , lng : value.lng}}
+                                onCloseClick={() => setActiveMarker(null)}
+                            >
+                                <div className="infowindow">
+                                    <p className="infoitem info_title">{value.wn_node}</p>
+                                    <p className="infoitem">lat : {value.lat}</p>
+                                    <p className="infoitem">lng : {value.lng}</p>
+                                    <p className="infoitem">battery : 25% </p>
+                                </div>
+                            </InfoWindow>
+                        )}
+                    </>
+                );
+            }else if(value.battery === 25){
+                return(
+                    <>
+                        <Marker 
+                            position={value}
+                            icon={
+                                {
+                                    url : "smfibattery25.png",
                                     scaledSize : new window.google.maps.Size(20,30)
                                 }
                             }
