@@ -246,82 +246,103 @@ export default function Googlemap({totalLine}) {
     });
 
     return (
-        <div className='googlemap-container'>
-            <div className="googlemap-alert">
-                <fieldset className='googlemap-totalfieldset'>
-                    <legend className='googlemap-maintitle'>Maker List</legend>
-                    <div className="googlemap-style googlemap-networknode">
-                        <img className='maker-img' src="smfibattery100.png" alt="Network Node" />
-                        <p>WBN Node</p>
-                    </div>
-                    <div className="googlemap-style googlemap-popnode">
-                        <img className='maker-img' src="smfipop.png" alt="Pop Node" />
-                        <p>Pop</p>
-                    </div>
-                    <div className="googlemap-style googlemap-trunknode">
-                        <img className='maker-img' src="smfitrunk.png" alt="Trunk Node" />
-                        <p>ACS Trunk Node</p>
-                    </div>
-                </fieldset>
-                <fieldset className="googlemap-totalfieldset2">
-                    <legend className='googlemap-maintitle'>Battery capacity</legend>
-                    <div className="blue info-tt">
-                        <img src="smfibattery100.png" alt="100" />
-                        <p>100%</p>
-                    </div>
-                    <div className="yellow info-tt">
-                        <img src="smfibattery75.png" alt="75" />
-                        <p>75%</p>
-                    </div>
-                    <div className="orange info-tt">
-                        <img src="smfibattery50.png" alt="50" />
-                        <p>50%</p>
-                    </div>
-                    <div className="red info-tt">
-                        <img src="smfibattery25.png" alt="25" />
-                        <p>25%</p>
-                    </div>
-                </fieldset>
+        <div className="googlemap">
+            <fieldset className='googlemap-totalfieldset3'>
+                <legend className='googlemap-maintitle'>Bandwidth Line</legend>
+                <div className="bandwidth-style bandwidth400">
+                    <img className='line-img' src="color4.png" alt="bandwidth400" />
+                    <p>Bronze</p>
+                </div>
+                <div className="bandwidth-style bandwidth300">
+                    <img className='line-img' src="color3.png" alt="bandwidth300" />
+                    <p>Silver</p>
+                </div>
+                <div className="bandwidth-style bandwidth200">
+                    <img className='line-img' src="color2.png" alt="bandwidth200" />
+                    <p>Gold</p>
+                </div>
+                <div className="bandwidth-style bandwidth100">
+                    <img className='line-img' src="color1.png" alt="bandwidth100" />
+                    <p>Platinum</p>
+                </div>
+            </fieldset>
+            <div className='googlemap-container'>
+                <div className="googlemap-alert">
+                    <fieldset className='googlemap-totalfieldset'>
+                        <legend className='googlemap-maintitle'>Maker List</legend>
+                        <div className="googlemap-style googlemap-networknode">
+                            <img className='maker-img' src="smfibattery100.png" alt="Network Node" />
+                            <p>WBN Node</p>
+                        </div>
+                        <div className="googlemap-style googlemap-popnode">
+                            <img className='maker-img' src="smfipop.png" alt="Pop Node" />
+                            <p>Pop</p>
+                        </div>
+                        <div className="googlemap-style googlemap-trunknode">
+                            <img className='maker-img' src="smfitrunk.png" alt="Trunk Node" />
+                            <p>ACS Trunk Node</p>
+                        </div>
+                    </fieldset>
+                    <fieldset className="googlemap-totalfieldset2">
+                        <legend className='googlemap-maintitle'>Battery capacity</legend>
+                        <div className="battery-style battery100">
+                            <img className='maker-img' src="smfibattery100.png" alt="100" />
+                            <p>100%</p>
+                        </div>
+                        <div className="battery-style battery75">
+                            <img className='maker-img' src="smfibattery75.png" alt="75" />
+                            <p>75%</p>
+                        </div>
+                        <div className="battery-style battery50">
+                            <img className='maker-img' src="smfibattery50.png" alt="50" />
+                            <p>50%</p>
+                        </div>
+                        <div className="battery-style battery25">
+                            <img className='maker-img' src="smfibattery25.png" alt="25" />
+                            <p>25%</p>
+                        </div>
+                    </fieldset>
+                </div>
+                <LoadScript googleMapsApiKey="AIzaSyDevvetng60XedeOqk-qW9TF-XBNQsyxdE">
+                    <GoogleMap 
+                        center={center} 
+                        zoom={zoom} 
+                        mapContainerStyle={mapSize} 
+                        onClick={()=>{handleActiveMarker(null)}}
+                        className="google-map-container"
+                    >
+                        {totalLine && ifmarker}
+                        {
+                            bw400.map(()=>{
+                                return (
+                                    <Polyline path={bw400} options={options400}/>
+                                )
+                            })
+                        }
+                        {
+                            bw300.map(()=>{
+                                return (
+                                    <Polyline path={bw300} options={options300}/>
+                                )
+                            })
+                        }
+                        {
+                            bw200.map(()=>{
+                                return (
+                                    <Polyline path={bw200} options={options200}/>
+                                )
+                            })
+                        }
+                        {
+                            bw100.map(()=>{
+                                return (
+                                    <Polyline path={bw100} options={options100}/>
+                                )
+                            })
+                        }                    
+                    </GoogleMap>
+                </LoadScript>
             </div>
-            <LoadScript googleMapsApiKey="AIzaSyDevvetng60XedeOqk-qW9TF-XBNQsyxdE">
-                <GoogleMap 
-                    center={center} 
-                    zoom={zoom} 
-                    mapContainerStyle={mapSize} 
-                    onClick={()=>{handleActiveMarker(null)}}
-                    className="google-map-container"
-                >
-                    {totalLine && ifmarker}
-                    {
-                        bw400.map(()=>{
-                            return (
-                                <Polyline path={bw400} options={options400}/>
-                            )
-                        })
-                    }
-                    {
-                        bw300.map(()=>{
-                            return (
-                                <Polyline path={bw300} options={options300}/>
-                            )
-                        })
-                    }
-                    {
-                        bw200.map(()=>{
-                            return (
-                                <Polyline path={bw200} options={options200}/>
-                            )
-                        })
-                    }
-                    {
-                        bw100.map(()=>{
-                            return (
-                                <Polyline path={bw100} options={options100}/>
-                            )
-                        })
-                    }                    
-                </GoogleMap>
-            </LoadScript>
         </div>
     )
 }

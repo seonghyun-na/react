@@ -222,9 +222,11 @@ td,th{
   display: flex;
   align-items: center;
   padding-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 .googlemap-networknode{
-
+  
 }
 .googlemap-popnode{
 
@@ -232,26 +234,60 @@ td,th{
 .googlemap-trunknode{
 
 }
+.maker-img{
+  width: 40px;
+  padding-right: 10px;
+}
 .googlemap-totalfieldset2{
   width: 250px;
   height: 400px;
   padding: 0;
   margin: 10px 10px;
 }
-.maker-img{
-  width: 40px;
-  padding-right: 10px;
-}
-.info-test{
-  display: flex;
-}
-.info-tt{
-  padding-top: 20px;
-  padding-right: 20px;
+.battery-style{
   display: flex;
   align-items: center;
+  padding-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
 }
-.info-tt img {
-  width: 40px;
-  margin-right: 10px;
+.battery100{
+
+}
+.battery75{
+
+}
+.battery50{
+
+}
+.battery25{
+
+}
+.googlemap-totalfieldset3{
+  padding: 0;
+  margin: 10px 10px;
+}
+.bandwidth-style{
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.line-img{
+  width: 70px;
+  height: 5px;
+  padding-right: 10px;
+}
+.bandwidth400{
+
+}
+.bandwidth300{
+
+}
+.bandwidth200{
+
+}
+.bandwidth100{
+
 }
