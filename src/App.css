@@ -204,6 +204,31 @@ td,th{
   margin : 10px;
   font-size: 25px;
 }
+.googlemap-container{
+  display: flex;
+}
+.googlemap-totalfieldset{
+  width: 450px;
+  padding: 0;
+  margin: 10px 10px;
+}
+.googlemap-style{
+  display: flex;
+  align-items: center;
+}
+.googlemap-networknode{
+
+}
+.googlemap-popnode{
+
+}
+.googlemap-trunknode{
+
+}
+.maker-img{
+  width: 40px;
+  padding-right: 10px;
+}
 .info-test{
   display: flex;
 }

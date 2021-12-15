@@ -14,9 +14,9 @@ export default function Googlemap({totalLine}) {
     };
     const zoom = 14;
     const mapSize = {
-        width : '1900px',
+        width : '1500px',
         height : '700px',
-        margin : '20px'
+        margin : '10px',
     };
     
     const handleActiveMarker = (marker) => {
@@ -107,7 +107,7 @@ export default function Googlemap({totalLine}) {
                                     <p className="infoitem info_title">{value.wn_node}</p>
                                     <p className="infoitem">lat : {value.lat}</p>
                                     <p className="infoitem">lng : {value.lng}</p>
-                                    <p className="infoitem">battery : 75% </p>
+                                    <p className="infoitem">battery : {value.battery}% </p>
                                 </div>
                             </InfoWindow>
                         )}
@@ -135,7 +135,7 @@ export default function Googlemap({totalLine}) {
                                     <p className="infoitem info_title">{value.wn_node}</p>
                                     <p className="infoitem">lat : {value.lat}</p>
                                     <p className="infoitem">lng : {value.lng}</p>
-                                    <p className="infoitem">battery : 25% </p>
+                                    <p className="infoitem">battery : {value.battery}% </p>
                                 </div>
                             </InfoWindow>
                         )}
@@ -163,7 +163,7 @@ export default function Googlemap({totalLine}) {
                                     <p className="infoitem info_title">{value.wn_node}</p>
                                     <p className="infoitem">lat : {value.lat}</p>
                                     <p className="infoitem">lng : {value.lng}</p>
-                                    <p className="infoitem">battery : 25% </p>
+                                    <p className="infoitem">battery : {value.battery}% </p>
                                 </div>
                             </InfoWindow>
                         )}
@@ -191,7 +191,7 @@ export default function Googlemap({totalLine}) {
                                     <p className="infoitem info_title">{value.wn_node}</p>
                                     <p className="infoitem">lat : {value.lat}</p>
                                     <p className="infoitem">lng : {value.lng}</p>
-                                    <p className="infoitem">battery : 25% </p>
+                                    <p className="infoitem">battery : {value.battery}% </p>
                                 </div>
                             </InfoWindow>
                         )}
@@ -246,51 +246,73 @@ export default function Googlemap({totalLine}) {
     });
 
     return (
-        <div>
-            <div className="info-test">
+        <div className='googlemap-container'>
+            <fieldset className='googlemap-totalfieldset'>
+                <legend>Maker List</legend>
+                <div className="googlemap-style googlemap-networknode">
+                    <img className='maker-img' src="smfibattery100.png" alt="Network Node" />
+                    <p>Network node</p>
+                </div>
+                <div className="googlemap-style googlemap-popnode">
+                    <img className='maker-img' src="smfipop.png" alt="Pop Node" />
+                    <p>Pop node</p>
+                </div>
+                <div className="googlemap-style googlemap-trunknode">
+                    <img className='maker-img' src="smfitrunk.png" alt="Trunk Node" />
+                    <p>Trunk node</p>
+                </div>
+                <fieldset className="google-map-info-test">
+                <legend>Battery capacity</legend>
                 <div className="blue info-tt">
-                    <img src="t1.png" alt="bt" />
+                    <img src="smfibattery100.png" alt="100" />
                     <p>100%</p>
                 </div>
                 <div className="yellow info-tt">
-                    <img src="t2.png" alt="bt" />
+                    <img src="smfibattery75.png" alt="75" />
                     <p>75%</p>
                 </div>
                 <div className="orange info-tt">
-                    <img src="t3.png" alt="bt" />
+                    <img src="smfibattery50.png" alt="50" />
                     <p>50%</p>
                 </div>
                 <div className="red info-tt">
-                    <img src="t4.png" alt="bt" />
+                    <img src="smfibattery25.png" alt="25" />
                     <p>25%</p>
                 </div>
-            </div>
+            </fieldset>
+            </fieldset>
             <LoadScript googleMapsApiKey="AIzaSyDevvetng60XedeOqk-qW9TF-XBNQsyxdE">
-                <GoogleMap center={center} zoom={zoom} mapContainerStyle={mapSize} onClick={()=>{handleActiveMarker(null)}}>
+                <GoogleMap 
+                    center={center} 
+                    zoom={zoom} 
+                    mapContainerStyle={mapSize} 
+                    onClick={()=>{handleActiveMarker(null)}}
+                    className="google-map-container"
+                >
                     {totalLine && ifmarker}
                     {
-                        bw400.map((value)=>{
+                        bw400.map(()=>{
                             return (
                                 <Polyline path={bw400} options={options400}/>
                             )
                         })
                     }
                     {
-                        bw300.map((value)=>{
+                        bw300.map(()=>{
                             return (
                                 <Polyline path={bw300} options={options300}/>
                             )
                         })
                     }
                     {
-                        bw200.map((value)=>{
+                        bw200.map(()=>{
                             return (
                                 <Polyline path={bw200} options={options200}/>
                             )
                         })
                     }
                     {
-                        bw100.map((value)=>{
+                        bw100.map(()=>{
                             return (
                                 <Polyline path={bw100} options={options100}/>
                             )
