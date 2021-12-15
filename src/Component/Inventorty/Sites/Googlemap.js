@@ -14,9 +14,9 @@ export default function Googlemap({totalLine}) {
     };
     const zoom = 14;
     const mapSize = {
-        width : '1500px',
-        height : '700px',
-        margin : '10px',
+        width : '1600px',
+        height : '715px',
+        margin : '12px',
     };
     
     const handleActiveMarker = (marker) => {
@@ -247,40 +247,42 @@ export default function Googlemap({totalLine}) {
 
     return (
         <div className='googlemap-container'>
-            <fieldset className='googlemap-totalfieldset'>
-                <legend>Maker List</legend>
-                <div className="googlemap-style googlemap-networknode">
-                    <img className='maker-img' src="smfibattery100.png" alt="Network Node" />
-                    <p>Network node</p>
-                </div>
-                <div className="googlemap-style googlemap-popnode">
-                    <img className='maker-img' src="smfipop.png" alt="Pop Node" />
-                    <p>Pop node</p>
-                </div>
-                <div className="googlemap-style googlemap-trunknode">
-                    <img className='maker-img' src="smfitrunk.png" alt="Trunk Node" />
-                    <p>Trunk node</p>
-                </div>
-                <fieldset className="google-map-info-test">
-                <legend>Battery capacity</legend>
-                <div className="blue info-tt">
-                    <img src="smfibattery100.png" alt="100" />
-                    <p>100%</p>
-                </div>
-                <div className="yellow info-tt">
-                    <img src="smfibattery75.png" alt="75" />
-                    <p>75%</p>
-                </div>
-                <div className="orange info-tt">
-                    <img src="smfibattery50.png" alt="50" />
-                    <p>50%</p>
-                </div>
-                <div className="red info-tt">
-                    <img src="smfibattery25.png" alt="25" />
-                    <p>25%</p>
-                </div>
-            </fieldset>
-            </fieldset>
+            <div className="googlemap-alert">
+                <fieldset className='googlemap-totalfieldset'>
+                    <legend className='googlemap-maintitle'>Maker List</legend>
+                    <div className="googlemap-style googlemap-networknode">
+                        <img className='maker-img' src="smfibattery100.png" alt="Network Node" />
+                        <p>WBN Node</p>
+                    </div>
+                    <div className="googlemap-style googlemap-popnode">
+                        <img className='maker-img' src="smfipop.png" alt="Pop Node" />
+                        <p>Pop</p>
+                    </div>
+                    <div className="googlemap-style googlemap-trunknode">
+                        <img className='maker-img' src="smfitrunk.png" alt="Trunk Node" />
+                        <p>ACS Trunk Node</p>
+                    </div>
+                </fieldset>
+                <fieldset className="googlemap-totalfieldset2">
+                    <legend className='googlemap-maintitle'>Battery capacity</legend>
+                    <div className="blue info-tt">
+                        <img src="smfibattery100.png" alt="100" />
+                        <p>100%</p>
+                    </div>
+                    <div className="yellow info-tt">
+                        <img src="smfibattery75.png" alt="75" />
+                        <p>75%</p>
+                    </div>
+                    <div className="orange info-tt">
+                        <img src="smfibattery50.png" alt="50" />
+                        <p>50%</p>
+                    </div>
+                    <div className="red info-tt">
+                        <img src="smfibattery25.png" alt="25" />
+                        <p>25%</p>
+                    </div>
+                </fieldset>
+            </div>
             <LoadScript googleMapsApiKey="AIzaSyDevvetng60XedeOqk-qW9TF-XBNQsyxdE">
                 <GoogleMap 
                     center={center} 

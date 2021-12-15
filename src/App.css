@@ -208,13 +208,20 @@ td,th{
   display: flex;
 }
 .googlemap-totalfieldset{
-  width: 450px;
+  width: 250px;
+  height: 300px;
   padding: 0;
   margin: 10px 10px;
+}
+.googlemap-maintitle{
+  background-color: #3b5980;
+  color: #fff;
+  padding: 5px 5px;
 }
 .googlemap-style{
   display: flex;
   align-items: center;
+  padding-bottom: 10px;
 }
 .googlemap-networknode{
 
@@ -224,6 +231,12 @@ td,th{
 }
 .googlemap-trunknode{
 
+}
+.googlemap-totalfieldset2{
+  width: 250px;
+  height: 400px;
+  padding: 0;
+  margin: 10px 10px;
 }
 .maker-img{
   width: 40px;
