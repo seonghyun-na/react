@@ -249,21 +249,18 @@ export default function Googlemap({totalLine}) {
         <div className="googlemap">
             <fieldset className='googlemap-totalfieldset3'>
                 <legend className='googlemap-maintitle'>Bandwidth Line</legend>
-                <div className="bandwidth-style bandwidth400">
+                <div className='bandwidth-style'>
                     <img className='line-img' src="color4.png" alt="bandwidth400" />
-                    <p>Bronze</p>
-                </div>
-                <div className="bandwidth-style bandwidth300">
-                    <img className='line-img' src="color3.png" alt="bandwidth300" />
-                    <p>Silver</p>
-                </div>
-                <div className="bandwidth-style bandwidth200">
-                    <img className='line-img' src="color2.png" alt="bandwidth200" />
-                    <p>Gold</p>
-                </div>
-                <div className="bandwidth-style bandwidth100">
-                    <img className='line-img' src="color1.png" alt="bandwidth100" />
                     <p>Platinum</p>
+                
+                    <img className='line-img' src="color3.png" alt="bandwidth300" />
+                    <p>Gold</p>
+                
+                    <img className='line-img' src="color2.png" alt="bandwidth200" />
+                    <p>Silver</p>
+                
+                    <img className='line-img' src="color1.png" alt="bandwidth100" />
+                    <p>Bronze</p>
                 </div>
             </fieldset>
             <div className='googlemap-container'>

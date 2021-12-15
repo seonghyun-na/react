@@ -204,12 +204,40 @@ td,th{
   margin : 10px;
   font-size: 25px;
 }
+.googlemap-totalfieldset3{
+  padding: 0;
+  margin: 10px 10px;
+}
+.bandwidth-style{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  margin: auto;
+}
+.line-img{
+  width: 70px;
+  height: 5px;
+  padding-right: 10px;
+}
+.bandwidth400{
+
+}
+.bandwidth300{
+
+}
+.bandwidth200{
+
+}
+.bandwidth100{
+
+}
 .googlemap-container{
   display: flex;
 }
 .googlemap-totalfieldset{
-  width: 250px;
-  height: 300px;
+  width: 230px;
+  height: 270px;
   padding: 0;
   margin: 10px 10px;
 }
@@ -222,8 +250,6 @@ td,th{
   display: flex;
   align-items: center;
   padding-bottom: 10px;
-  margin-left: 20px;
-  margin-top: 10px;
 }
 .googlemap-networknode{
   
@@ -239,10 +265,10 @@ td,th{
   padding-right: 10px;
 }
 .googlemap-totalfieldset2{
-  width: 250px;
+  width: 230px;
   height: 400px;
   padding: 0;
-  margin: 10px 10px;
+  margin-left: 10px;
 }
 .battery-style{
   display: flex;
@@ -261,33 +287,5 @@ td,th{
 
 }
 .battery25{
-
-}
-.googlemap-totalfieldset3{
-  padding: 0;
-  margin: 10px 10px;
-}
-.bandwidth-style{
-  display: flex;
-  align-items: center;
-  padding-bottom: 10px;
-  margin-left: 20px;
-  margin-top: 10px;
-}
-.line-img{
-  width: 70px;
-  height: 5px;
-  padding-right: 10px;
-}
-.bandwidth400{
-
-}
-.bandwidth300{
-
-}
-.bandwidth200{
-
-}
-.bandwidth100{
 
 }
