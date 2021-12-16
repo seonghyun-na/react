@@ -127,11 +127,11 @@ export default function InfoMap(props){
             <div className="map">
             <div className="container_map">
                 <div className="kinds">
-                    <img className="pop" src="nodepop.png" alt="pop" />
+                    <img className="pop" src="smfipop.png" alt="pop" />
                     <p>PoP</p>
-                    <img className="trunk" src="3.png" alt="trunk" />
+                    <img className="trunk" src="smfitrunk.png" alt="trunk" />
                     <p>ACS Trunk Node</p>
-                    <img className="wbn" src="2.png" alt="node"/>
+                    <img className="wbn" src="smfinode.png" alt="node"/>
                     <p>WBN Node</p>
                 </div>
                 <div className="bandwidthLevel">
@@ -164,7 +164,7 @@ export default function InfoMap(props){
                                         key={value.num}
                                         icon={
                                             {
-                                                url : '2.png',
+                                                url : 'smfinode.png',
                                                 scaledSize : new google.maps.Size(20,25),
                                             }
                                         }
@@ -195,7 +195,7 @@ export default function InfoMap(props){
                                         position={{lat : value.lat , lng : value.lng}}
                                         icon={
                                             {
-                                                url : '1.png',
+                                                url : 'smfipop.png',
                                                 scaledSize : new google.maps.Size(25,30),
                                             }
                                         }
@@ -226,7 +226,7 @@ export default function InfoMap(props){
                                         position={{lat : value.lat , lng : value.lng}}
                                         icon={
                                             {
-                                                url : '3.png',
+                                                url : 'smfitrunk.png',
                                                 scaledSize : new google.maps.Size(25,30),
                                             }
                                         }
