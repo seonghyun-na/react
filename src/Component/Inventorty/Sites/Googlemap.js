@@ -14,7 +14,7 @@ export default function Googlemap({totalLine}) {
     };
     const zoom = 14;
     const mapSize = {
-        width : '1600px',
+        width : '1650px',
         height : '715px',
         margin : '12px',
     };

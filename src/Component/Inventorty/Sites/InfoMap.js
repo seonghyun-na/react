@@ -67,7 +67,7 @@ export default function InfoMap(props){
 
     /* google map stlye */
     const style = {
-        width : '1800px',
+        width : '1850px',
         height : '700px',
         margin : '20px',
     };
@@ -125,6 +125,24 @@ export default function InfoMap(props){
     return (
         <>
             <div className="map">
+            <div className="infomap-battery">
+                <div className="blue infomap-battery-style">
+                    <img className="maker-img" src="smfibattery100.png" alt="bt100" />
+                    <p>100%</p>
+                </div>
+                <div className="yellow infomap-battery-style">
+                    <img className="maker-img" src="smfibattery75.png" alt="bt75" />
+                    <p>75%</p>
+                </div>
+                <div className="orange infomap-battery-style">
+                    <img className="maker-img" src="smfibattery50.png" alt="bt50" />
+                    <p>50%</p>
+                </div>
+                <div className="red infomap-battery-style">
+                    <img className="maker-img" src="smfibattery25.png" alt="bt25" />
+                    <p>25%</p>
+                </div>
+            </div>
             <div className="container_map">
                 <div className="kinds">
                     <img className="pop" src="smfipop.png" alt="pop" />
