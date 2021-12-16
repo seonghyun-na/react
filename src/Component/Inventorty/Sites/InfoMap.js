@@ -70,7 +70,7 @@ export default function InfoMap(props){
     const style = {
         width : '1800px',
         height : '700px',
-        margin : '20px',
+        margin : 'auto',
     };
 
     /* google map 첫 화면 */
@@ -138,7 +138,7 @@ export default function InfoMap(props){
                                         key={value.num}
                                         icon={
                                             {
-                                                url : 'smfinode.png',
+                                                url : '1.png',
                                                 scaledSize : new google.maps.Size(20,25),
                                             }
                                         }
@@ -169,7 +169,7 @@ export default function InfoMap(props){
                                             position={{lat : value.lat , lng : value.lng}}
                                             icon={
                                                 {
-                                                    url : 'smfipop.png',
+                                                    url : '12.png',
                                                     scaledSize : new google.maps.Size(25,30),
                                                 }
                                             }

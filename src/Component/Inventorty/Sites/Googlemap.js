@@ -1,11 +1,15 @@
 /*global google*/
-import React,{ useState } from 'react';
+import React,{ useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker, Polyline, InfoWindow } from '@react-google-maps/api';
+import Infotitle from './Infotitle';
 
 export default function Googlemap({totalLine}) {
     //console.log(totalLine);
     const [activeMarker, setActiveMarker] = useState(null);
-
+    const [checkpoint,setCheckPoint] = useState(null);
+    useEffect(()=>{
+        setCheckPoint();
+    },[])
     const google = window.google;
 
     const center = { 
@@ -14,9 +18,9 @@ export default function Googlemap({totalLine}) {
     };
     const zoom = 14;
     const mapSize = {
-        width : '1650px',
+        width : '1800px',
         height : '715px',
-        margin : '12px',
+        margin : 'auto',
     };
     
     const handleActiveMarker = (marker) => {
@@ -35,7 +39,7 @@ export default function Googlemap({totalLine}) {
                     position={value}
                     icon={
                         {
-                            url : "smfipop.png",
+                            url : "12.png",
                             scaledSize: new window.google.maps.Size(20,30)
                         }
                     }
@@ -85,14 +89,14 @@ export default function Googlemap({totalLine}) {
                 </>
             )
         }else if(value.wn_node){
-            if(value.battery === 100){
+            if(value.battery > 30){
                 return (
                     <>
                         <Marker 
                             position={value}
                             icon={
                                 {
-                                    url : "smfibattery100.png",
+                                    url : "1.png",
                                     scaledSize : new window.google.maps.Size(20,30)
                                 }
                             }
@@ -113,14 +117,19 @@ export default function Googlemap({totalLine}) {
                         )}
                     </>
                 )
-            }else if(value.battery === 75){
+            }else if(value.battery < 30 && value.battery > 10){
+                if(value.battery > 30){
+                    console.log('Check');
+                }else{
+                    setCheckPoint(true);
+                }
                 return(
                     <>
                         <Marker 
                             position={value}
                             icon={
                                 {
-                                    url : "smfibattery75.png",
+                                    url : "2.png",
                                     scaledSize : new window.google.maps.Size(20,30)
                                 }
                             }
@@ -141,14 +150,14 @@ export default function Googlemap({totalLine}) {
                         )}
                     </>
                 );
-            }else if(value.battery === 50){
+            }else if(value.battery <= 10){
                 return(
                     <>
                         <Marker 
                             position={value}
                             icon={
                                 {
-                                    url : "smfibattery50.png",
+                                    url : "3.png",
                                     scaledSize : new window.google.maps.Size(20,30)
                                 }
                             }
@@ -245,61 +254,20 @@ export default function Googlemap({totalLine}) {
         }
     });
 
+    const closepage = () =>{
+        setCheckPoint(null);
+    };
+
     return (
         <div className="googlemap">
-            <fieldset className='googlemap-totalfieldset3'>
-                <legend className='googlemap-maintitle'>Bandwidth Line</legend>
-                <div className='bandwidth-style'>
-                    <img className='line-img' src="color4.png" alt="bandwidth400" />
-                    <p>Platinum</p>
-                
-                    <img className='line-img' src="color3.png" alt="bandwidth300" />
-                    <p>Gold</p>
-                
-                    <img className='line-img' src="color2.png" alt="bandwidth200" />
-                    <p>Silver</p>
-                
-                    <img className='line-img' src="color1.png" alt="bandwidth100" />
-                    <p>Bronze</p>
-                </div>
-            </fieldset>
-            <div className='googlemap-container'>
-                <div className="googlemap-alert">
-                    <fieldset className='googlemap-totalfieldset'>
-                        <legend className='googlemap-maintitle'>Maker List</legend>
-                        <div className="googlemap-style googlemap-networknode">
-                            <img className='maker-img' src="smfibattery100.png" alt="Network Node" />
-                            <p>WBN Node</p>
-                        </div>
-                        <div className="googlemap-style googlemap-popnode">
-                            <img className='maker-img' src="smfipop.png" alt="Pop Node" />
-                            <p>Pop</p>
-                        </div>
-                        <div className="googlemap-style googlemap-trunknode">
-                            <img className='maker-img' src="smfitrunk.png" alt="Trunk Node" />
-                            <p>ACS Trunk Node</p>
-                        </div>
-                    </fieldset>
-                    <fieldset className="googlemap-totalfieldset2">
-                        <legend className='googlemap-maintitle'>Battery capacity</legend>
-                        <div className="battery-style battery100">
-                            <img className='maker-img' src="smfibattery100.png" alt="100" />
-                            <p>100%</p>
-                        </div>
-                        <div className="battery-style battery75">
-                            <img className='maker-img' src="smfibattery75.png" alt="75" />
-                            <p>75%</p>
-                        </div>
-                        <div className="battery-style battery50">
-                            <img className='maker-img' src="smfibattery50.png" alt="50" />
-                            <p>50%</p>
-                        </div>
-                        <div className="battery-style battery25">
-                            <img className='maker-img' src="smfibattery25.png" alt="25" />
-                            <p>25%</p>
-                        </div>
-                    </fieldset>
-                </div>
+            <Infotitle/>
+                {checkpoint && (
+                    <div className="googlemap-alert">
+                        <p>배터리 잔량이 30%이하입니다.</p>
+                        <button onClick={closepage}>창 닫기</button>
+                    </div>
+                    )
+                }
                 <LoadScript googleMapsApiKey="AIzaSyDevvetng60XedeOqk-qW9TF-XBNQsyxdE">
                     <GoogleMap 
                         center={center} 
@@ -340,6 +308,5 @@ export default function Googlemap({totalLine}) {
                     </GoogleMap>
                 </LoadScript>
             </div>
-        </div>
     )
 }
