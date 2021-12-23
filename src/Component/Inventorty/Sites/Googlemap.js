@@ -6,10 +6,7 @@ import Infotitle from './Infotitle';
 export default function Googlemap({totalLine}) {
     //console.log(totalLine);
     const [activeMarker, setActiveMarker] = useState(null);
-    const [checkpoint,setCheckPoint] = useState(null);
-    useEffect(()=>{
-        setCheckPoint();
-    },[])
+    //const [checkpoint,setCheckPoint] = useState(null);
     const google = window.google;
 
     const center = { 
@@ -120,8 +117,6 @@ export default function Googlemap({totalLine}) {
             }else if(value.battery < 30 && value.battery > 10){
                 if(value.battery > 30){
                     console.log('Check');
-                }else{
-                    setCheckPoint(true);
                 }
                 return(
                     <>
@@ -254,20 +249,20 @@ export default function Googlemap({totalLine}) {
         }
     });
 
-    const closepage = () =>{
-        setCheckPoint(null);
-    };
+    // const closepage = () =>{
+    //     setCheckPoint(null);
+    // };
 
     return (
         <div className="googlemap">
             <Infotitle/>
-                {checkpoint && (
+                {/*checkpoint && (
                     <div className="googlemap-alert">
                         <p>배터리 잔량이 30%이하입니다.</p>
                         <button onClick={closepage}>창 닫기</button>
                     </div>
                     )
-                }
+                */}
                 <LoadScript googleMapsApiKey="AIzaSyDevvetng60XedeOqk-qW9TF-XBNQsyxdE">
                     <GoogleMap 
                         center={center} 
