@@ -1,0 +1,331 @@
+html,body{
+  margin: 0;
+  box-sizing: border-box;
+}
+p{
+  margin: 0;
+  padding-bottom: 2px;
+}
+button {
+  border: none;
+  border-radius: 5%;
+  background: lightgrey;
+  font-size: 13px;
+  cursor: pointer;
+  height: 23px;
+  padding-bottom: 5px;
+  padding-top: 3px;
+  padding-left: 8px;
+  padding-right: 10px;
+}
+td,th{
+  width: 100px;
+  height: auto;
+  border: 2px solid #3b5980;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.itembox{
+  display:flex;
+  justify-content: center;
+  width: 500px;
+  height: 30px;
+}
+.result{
+  margin: 0;
+  padding-right: 10px;
+  font-size: 15px;
+}
+.spantitle{
+  width: 500px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 17px;
+  border-radius: 2%;
+  color : #222;
+}
+.titletotal{
+  margin-bottom: 15px;
+}
+.title2{
+  color: yellowgreen;
+  font-weight: bold;
+}
+.pstyle{
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.xx{
+  display: block;
+  width: 500px;
+  height: 30px;
+}
+.content{
+  display: flex;
+  margin: 0;
+}
+.tableset{
+  border: 1px solid #3b5980;
+  margin: 0px 10px;
+  margin-bottom: 100px;
+  font-size: 16px;
+}
+.size{
+  font-size: 15px;
+}
+.headstyle{
+  font-size: 20px;
+  background: #3b5998;
+  color: #fff;
+  
+}
+
+.sublist{
+  background: linear-gradient(to left, #1b1a57 ,#3b5998);
+  height: 50px;
+  display: flex;
+}
+.sublist p{
+  color: #fff;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+.sublist a {
+  padding-left: 10px;
+  margin-top: 10px;
+}
+.navlink{
+  color: #fff;
+  font-size: 20px;
+  padding-right: 20px;
+}
+.loader__text{
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.chartlayout{
+  padding: 20px 20px;
+  border: 1px solid #3b5980;
+  border-radius: 5%;
+  margin: 0px 20px;
+}
+.active{
+  color: yellowgreen;
+}
+.footer{
+  font-size: 17px;
+  position : absolute;
+  left: 45%;
+  bottom: 0;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.footertitle{
+  padding-left: 70px;
+  text-align: center;
+}
+.info_title{
+  padding-bottom: 5px;
+}
+.container_map{
+}
+.infowindow{
+  width: 100px;
+  height: 70px;
+}
+.infopolyline{
+  width: 100px;
+  height: 70px;
+  border: 1px solid transparent;
+}
+.infoitem{
+  padding-bottom: 2px;
+}
+.infoitem2{
+  margin-top: 25px;
+}
+.line100{
+  color: orange;
+}
+.line200{
+  color: green;
+}
+.line300{
+  color: blue;
+}
+.btntt{
+  margin: 0px 10px;
+}
+.node_items{
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  height: 700px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.list{
+  border: 1px solid black;
+  border-radius: 5%;
+  margin-bottom: 10px;
+  width: 300px;
+}
+.list h1{
+  margin : 10px;
+  font-size: 25px;
+}
+/*.infomap-battery{
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 110px;
+}
+.infomap-battery-style{
+  padding-top: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+}*/
+
+/* googlemap.js*/
+.googlemap{
+
+}
+.googlemap-alert{
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 100;
+  background-color: #fff;
+  border: 1px solid black;
+}
+.googlemap-alert p{
+  margin-top: 12%;
+}
+.googlemap-totalfieldset3{
+  padding: 0;
+  margin: 10px 10px;
+}
+.bandwidth400{
+
+}
+.bandwidth300{
+
+}
+.bandwidth200{
+
+}
+.bandwidth100{
+
+}
+.googlemap-container{
+  display: flex;
+}
+.googlemap-totalfieldset{
+  width: 230px;
+  height: 270px;
+  padding: 0;
+  margin: 10px 10px;
+}
+.googlemap-maintitle{
+  background-color: #3b5980;
+  color: #fff;
+  padding: 5px 5px;
+}
+.googlemap-style{
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.googlemap-networknode{
+  
+}
+.googlemap-popnode{
+
+}
+.googlemap-trunknode{
+
+}
+.maker-img{
+  width: 40px;
+  padding-right: 10px;
+}
+.googlemap-totalfieldset2{
+  width: 230px;
+  height: 400px;
+  padding: 0;
+  margin-left: 10px;
+}
+.battery-style{
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.battery100{
+
+}
+.battery75{
+
+}
+.battery50{
+
+}
+.battery25{
+
+}
+
+/* Infotitle.js */
+.infotitle{
+  width: 1600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  margin: 10px auto;
+}
+.infotitle-item{
+  display: flex;
+  align-items: center;
+  margin: 10px 20px;
+}
+.infotitle-itemname{
+
+}
+.infotitle-style{
+  width: 20px;
+  height: 30px;
+  padding-right: 10px;
+}
+.pop{
+
+}
+.trunk{
+
+}
+.wbn{
+
+}
+.infotitle-bandwidthLevel{
+  display: flex;
+  align-items: center;
+  margin: 10px 20px;
+}
+.infotitle-bandwidthname{
+
+}
+.infotitle-linestyle{
+  width: 30px;
+  height: 5px;
+  padding-right: 10px;
+}
